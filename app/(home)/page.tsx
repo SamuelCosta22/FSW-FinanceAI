@@ -31,16 +31,16 @@ const Home = async ({searchParams: {month}}: HomeProps) => {
   return(
     <>
       <Navbar />
-      <div className="p-6 space-y-6">
+      <div className="p-6 space-y-6 flex flex-col overflow-hidden h-full">
         <div className="flex justify-between">
           <h1 className="text-2xl font-bold">Dashboard</h1>
           <TimeSelect />
         </div>
 
-        <div className="grid gap-6" style={{ gridTemplateColumns: "2fr 1fr" }}>
-          <div className="flex flex-col gap-6">
+        <div className="grid gap-6 h-full overflow-hidden" style={{ gridTemplateColumns: "2fr 1fr" }}>
+          <div className="flex flex-col gap-6 overflow-hidden">
             <SummaryCards month={month} {...dashboard} />
-            <div className="grid grid-cols-3 grid-rows-1 gap-6">
+            <div className="grid h-full grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
               <TransactionsPieChart {...dashboard} />
               <ExpernsesPerCategory expensesPerCategory={dashboard.totalExpensePerCategory} />
             </div>
